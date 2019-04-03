@@ -1,0 +1,15 @@
+{
+    "currentLevel": 0,
+    "levels": [
+        {
+            "name": "Level 1",
+            "hitTest": "radiiHitTest",
+            "dampeningForce": 0.06,
+            "rateOfFire": 15,
+            "numberOfOrbs": 20,
+            "sounds": [
+                { "id": "fire", "src": "sound/laser-1.mp3" }
+            ]
+        }
+    ]
+}
