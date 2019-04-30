@@ -16,13 +16,13 @@
        * asset is the parent Container for this view. Use
        * asset.addChild() to add child components to the view.
        */
-      asset = new createjs.Container();
+      container = new createjs.Container();
       
     // create view components here //
     const textfield = draw.textfield('PLAYING', 'bold 60px Arial', '#FFF');
     
     // add all view components to the view container //
-    asset.addChild(textfield);
+    container.addChild(textfield);
     
     
     /**
@@ -44,20 +44,20 @@
     }
     
     // setup a one-time added-to-parent listener //
-    asset.on('added', onAdded);
+    container.on('added', onAdded);
     function onAdded(event) {
       if(game.getDebug()) console.log('playing view added to stage');
-      asset.off('added', onAdded);
+      container.off('added', onAdded);
       render();
     }
 
     /*
-     * Return the view API: It MUST expose the asset, the render() method, and 
+     * Return the view API: It MUST expose the container, the render() method, and 
      * the liquify() method. However, any other child components or API needed 
      * to control this view can be exposed.
      */
     return {
-      asset,
+      container,
       render,
       liquify,
       open() {

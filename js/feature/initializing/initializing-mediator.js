@@ -22,9 +22,14 @@
           game.view.addChild(view.asset);
           view.open();
           
-          // fake some init time //
-          setTimeout(() => view.close()
-            .call(() => resolve(/* resolve with any loaded assets */)), 1500);
+           // load the game data //
+          opspark.util.getJSON('data.json')
+            .then(data => {
+              // TODO: remove this next line, and uncomment the 2/3rd lines for sound
+              resolve(data);
+              // opspark.util.dj.load(data.levels[data.currentLevel].sounds)
+              //   .then(view.close().call(() => resolve(data)));
+            });
         });
       },
       exit() {

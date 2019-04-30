@@ -7,8 +7,11 @@
             "dampeningForce": 0.06,
             "rateOfFire": 15,
             "numberOfOrbs": 20,
+            "road": { 
+                "width": 650,
+                "x": "CENTER"
+            },
             "sounds": [
-                { "id": "fire", "src": "sound/laser-1.mp3" }
             ]
         }
     ]
